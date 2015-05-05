@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+</head>
+<body class="body">
+
+	<div id="container">
+		<div id="header_cont">
+			<div id="login_and_user_m">
+				<div class="text_right">
+					<{if $xoops_isuser}>
+					ようこそ&nbsp;<{$xoops_uname}>さん&nbsp;!&nbsp;只今ログイン中です。
+					サイトの閲覧をやめる時は<a href="<{$xoops_url}>/user.php?op=logout"><span class="bold">ログアウト</span></a>して下さい。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<{/if}>
+					<{if !$xoops_isuser}>
+						<form action="<{$xoops_url}>/user.php" method="post" style="margin: 0px;">
+						<a href="<{$xoops_url}>/register.php">
+						会員登録する</a>&nbsp;|&nbsp;<a href="<{$xoops_url}>/user.php">パスワード紛失</a>&nbsp;&nbsp;
+						ユーザ名：
+						<input class="input" type="text" name="uname" size="18" />
+						&nbsp;パスワード：
+						<input class="input" type="password" name="pass" size="18" />
+						<input type="hidden" name="op" value="login" />&nbsp;
+						<input class="login" type="submit" value="Login" />
+						</form>
+						<{else}>
+						<a href="<{$xoops_url}>/user.php">アカウント情報</a>&nbsp;&nbsp;|&nbsp;
+						<a href="<{$xoops_url}>/notifications.php">イベント通知</a>&nbsp;&nbsp;|&nbsp;
+						<a href="<{$xoops_url}>/viewpmsg.php">P.M.受信箱</a>
+						<{if $xoops_isadmin}>|&nbsp;&nbsp;<a href="<{$xoops_url}>/admin.php">管理用</a><{/if}>
+					<{/if}>
+				</div>
+			</div>
+			<div id="logo_wrap">
+			<a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>/image/logo.gif" alt="<{$xoops_sitename}>" /></a>
+			<h1><a href="<{$xoops_url}>/"><{$xoops_sitename}></a>&nbsp;-&nbsp;<{$xoops_pagetitle}></h1>
+			</div>
+			<div class="top_menu_0">
+				<{foreach from=$xugj_menus item="menu0"}>
+				<{if $menu0.dirname == $xoops_dirname}>
+					<{assign var="xugj_menus1" value=$menu0.sub}>
+					<{assign var="menu0_class" value=" selected"}>
+				<{else}>
+					<{assign var="menu0_class" value=""}>
+				<{/if}>
+				<span class="menu_level0<{$menu0_class}>">
+					<a href="<{$xoops_url}>/modules/<{$menu0.dirname}>/<{$menu0.url}>" class="menu_level0<{$menu0_class}>"><{$menu0.name}></a>
+				</span>
+				<{/foreach}>
+			</div>
+			<div class="top_menu_1">
+			<{if $xugj_menus1}>
+				<{foreach from=$xugj_menus1 item="menu1"}>
+				<{if stristr( $smarty.server.REQUEST_URI , $menu1.url )}>
+					<{assign var="xugj_menus2" value=$menu1.sub}>
+					<{assign var="menu1_class" value=" selected"}>
+				<{else}>
+					<{assign var="menu1_class" value=""}>
+				<{/if}>
+				<span class="menu_level1<{$menu1_class}>">
+					<a href="<{$xoops_url}>/modules/<{$menu1.dirname}>/<{$menu1.url}>" class="menu_level1<{$menu1_class}>">&nbsp;＞&nbsp;<{$menu1.name}></a>
+				</span>
+				<{/foreach}>
+			<{/if}><div class="text_right">
+					<a href="http://www.expiece.com/html/"><img src="<{$xoops_imageurl}>image/none.gif" width="1px" height="1px" /></a>
+					訪問日時：<{php}>echo (date ("m月d日h時i分"));<{/php}></div>
+			</div>
+		</div>
+		<div id="l_clr_r_wrap">
+		<{if $xoops_showlblock == 1}>
+			<div id="left_center_wrap<{if ! $xoops_showrblock == 1}>_rc_none<{/if}>">
+		<{/if}>
+			<div id="centercolumn<{if ! $xoops_showlblock == 1}>_lc_none<{/if}><{if ! $xoops_showrblock == 1}>_rc_none<{/if}>">
+			<{if $xoops_showcblock == 1}>
+				<div id="centerCcolumn">
+				<{foreach item=block from=$xoops_ccblocks}>
+					<{if ! $block.title|strstr:"none"}>
+					<div class="blockTitle"><{$block.title}></div>
+					<{/if}>
+					<div class="blockContent"><{$block.content}></div>
+				<{/foreach}>
+				</div>
+				<div id="cl_cr_wrap">
+					<div id="centerLcolumn">
+					<{foreach item=block from=$xoops_clblocks}>
+						<{if ! $block.title|strstr:"none"}>
+						<div class="blockTitle"><{$block.title}></div>
+						<{/if}>
+						<div class="blockContent"><{$block.content}></div>
+					<{/foreach}>
+					</div>
+					<div id="centerRcolumn">
+					<{foreach item=block from=$xoops_crblocks}>
+						<{if ! $block.title|strstr:"none"}>
+						<div class="blockTitle"><{$block.title}></div>
+						<{/if}>
+						<div class="blockContent"><{$block.content}></div>
+					<{/foreach}>
+					</div>
+				</div>
+			<{/if}>
+				<div id="content"><{$xoops_contents}></div>
+			<{if $xoops_showlblock == 1}>
+				</div>
+			<{/if}>
+		<{if $xoops_showlblock == 1}>
+				<div id="leftcolumn<{if ! $xoops_showrblock == 1}>_rc_none<{/if}>">
+				<{foreach item=block from=$xoops_lblocks}>
+					<{if ! $block.title|strstr:"none"}>
+					<div class="blockTitle"><{$block.title}></div>
+					<{/if}>
+					<div class="blockContent"><{$block.content}></div>
+				<{/foreach}>
+				</div>
+		<{/if}>
+			</div>
+		<{if $xoops_showrblock == 1}>
+			<div id="rightcolumn">
+			<{foreach item=block from=$xoops_rblocks}>
+				<{if ! $block.title|strstr:"none"}>
+				<div class="blockTitle"><{$block.title}></div>
+				<{/if}>
+				<div class="blockContent"><{$block.content}></div>
+			<{/foreach}>
+			</div>
+		<{/if}>
+		</div>
+		<div id="footerbar">
+			<{$xoops_footer}>&nbsp;&nbsp;|&nbsp;&nbsp;Theme Designed by&nbsp;&nbsp;<a href="http://www.expiece.com/html/" target="_blank">EXTRAFFIC</a>
+		</div>
+	</div>
+</body>
+</html>

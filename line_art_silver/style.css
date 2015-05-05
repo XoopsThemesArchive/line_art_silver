@@ -1,0 +1,697 @@
+/*------------------------------------------------
+Designed by EXTRAFFIC	copyright (c) ExPiece
+          http://www.expiece.com/html/
+------------------------------------------------*/
+
+/*------------------------------------------------
+全般定義
+------------------------------------------------*/
+* {padding: 0; margin: 0;}
+
+.body {
+	color:			#000;
+	font-size:		75%;
+	line-height:		1.5;
+	text-align:		left;
+	font-family:		arial,
+				Verdana,
+				Helvetica,
+				'ＭＳ Ｐゴシック',
+				'Hiragino Kaku Gothic Pro',
+				'ヒラギノ角ゴ Pro W3',
+				osaka,
+				sans-serif;
+}
+/*テーブル全般定義---------------------*/
+table {
+	width:			100%;
+	border-collapse:	collapse;
+}
+table td {
+	vertical-align:		top;
+}
+th {
+	padding:		5px;
+	vertical-align:		middle;
+	background:		#bbb;
+	border-top:		1px solid #ccc;
+	border-left:		1px solid #ccc;
+	border-bottom:		1px solid #999;
+	border-right:		1px solid #999;
+}
+/*リンク全般定義-----------------------*/
+/*リンク*/
+a {
+	color:			#00f;
+	text-decoration:	none;
+}
+/*訪問済*/
+/*a:visited {
+	text-decoration:	none;
+}*/
+/*ポインタ中*/
+a:hover {
+	color:			#f00;
+	text-decoration:	underline;
+}
+/*訪問中*/
+/*a:active {
+	color:			blue;
+}*/
+/*一般タグ全般定義---------------------*/
+h1 {
+	font-size:		200%;
+	font-weight:		bold;
+	margin:			0;
+	padding:		0;
+}
+h2 {
+	margin:			0;
+	padding:		0;
+	font-size:		150%;
+	font-weight:		normal;
+}
+h3,h4,h5 {
+	margin:			0;
+	padding:		0;
+	font-size:		130%;
+	font-weight:		normal;
+}
+p,b,i,u,form {
+	margin:			0;
+	padding:		0;
+	font-size:		100%;
+}
+input {
+	padding:		2px 0;
+	font-family:		arial;
+	font-size:		100%;
+	color:			#000;
+	background-color:	transparent;
+	border:			1px solid #777;
+}
+textarea {
+	overflow:		auto;
+	width:			99%;
+	font-size:		100%;
+	font-family:		arial;
+	color:			#000;
+	background-color:	transparent;
+	border:			1px solid #777;
+}
+select {
+	font-size:		100%;
+	font-family:		arial;
+	color:			#000;
+	background-color:	transparent;
+	border:			1px solid #777;
+}
+/*リスト表示全般定義-------------------*/
+ul {
+	margin:			0;
+	padding:		2px;
+	list-style:		decimal inside;
+	text-align:		left;
+}
+li {
+	margin-left:		15px;
+	padding:		0;
+	list-style:		disc outside;
+	color:			#777;
+}
+/*-----------------------------------------------
+#container
+-----------------------------------------------*/
+#container {
+	margin:			10px;
+	border:			1px solid #777;
+}
+/*-----------------------------------------------
+[ ヘッダ部定義 ] #container
+-----------------------------------------------*/
+#header_cont {
+	clear:			both;
+	border-bottom:		1px solid #777;
+	background-color:	#eee;
+}
+#header_cont #login_and_user_m {
+	padding:		3px;
+	border-bottom:		1px solid #777;
+	background-color:	#ccc;
+}
+.text_right {
+	text-align:		right;
+}
+.bold {
+	font-weight:		bold;
+}
+#login_and_user_m .input {
+	width:			80px;
+	height:			15px;
+}
+#login_and_user_m .login {
+	font-family:		arial;
+	font-size:		10px;
+}
+#header_cont #logo_wrap {
+	clear:			both;
+	padding:		5px;
+	font-family:		Monotype Corsiva,
+				Times New Roman,
+				'ＭＳ 明朝',
+				'HG行書体',
+				'ＭＳ Ｐ明朝',
+				'Hiragino Kaku Gothic Pro',
+				'ヒラギノ角ゴ Pro W3';
+	background-color:	#eee;
+}
+span.menu_level0 a {
+	float:			left;
+	overflow:		hidden;
+	display:		block;
+	padding:		3px;
+	margin:			2px 0 2px 2px;
+	text-align:		center;
+	border:			1px solid #777;
+}
+span.menu_level0 a:hover {
+	background-color:	#bbf;
+}
+#header_cont .top_menu_1 {
+	clear:			both;
+	padding:		3px;
+	border-top:		1px solid #777;
+	background-color:	#ccc;
+}
+span.menu_level1 a {
+	float:			left;
+	display:		block;
+	margin:			0 5px;
+	text-decoration:	none;
+}
+span.menu_level1 a:hover {
+	background-color:	#bbf;
+	text-decoration:	underline;
+}
+.selected {
+	background-color:	#fbb;
+}
+
+/*-----------------------------------------------
+[ フッタブロックの定義 ] #container
+-----------------------------------------------*/
+#footerbar {
+	clear:			both;
+	overflow:		hidden;
+	padding:		5px;
+	text-align:		center;
+	border-top:		1px solid #777;
+	background-color:	#ddd;
+}
+/*-----------------------------------------------
+ページナビ
+-----------------------------------------------*/
+span.pagenav_on {
+	padding:		5px 8px;
+	font-size:		15px;
+	text-decoration:	none;
+	font-weight:		bold;
+	border:			1px solid #ddd;
+	background:		#fff;
+}
+span.pagenav_off {
+	padding:		5px 8px;
+	font-size:		15px;
+	text-decoration:	none;
+	border:			1px solid #aaa;
+	background:		#eee;
+}
+/*-----------------------------------------------
+[ モジュール定義 ]
+-----------------------------------------------*/
+#content {
+	clear:			both;
+	overflow:		hidden;
+	padding:		8px 5px;
+	margin:			0;
+}
+/*-----------------------------------------------
+[ 左・中央・右各ブロックラッパー ]
+-----------------------------------------------*/
+#l_clr_r_wrap {
+	clear:			both;
+	overflow:		hidden;
+	margin-top:		5px;
+	margin-bottom:		5px;
+}
+/*-----------------------------------------------
+[ 中央ブロック定義 ]
+-----------------------------------------------*/
+#centercolumn {
+	width:			74%;
+	float:			right;
+	background:		#fff;
+}
+#centercolumn_lc_none {
+	width:			79%;
+	float:			left;
+	background:		#fff;
+}
+#centercolumn_rc_none {
+	width:			79%;
+	float:			right;
+	background:		#fff;
+}
+#centercolumn_lc_none_rc_none {
+	width:			100%;
+	background:		#fff;
+}
+/*-----------------------------------------------
+[ 中央-中央ブロック定義 ] .centercolumn
+-----------------------------------------------*/
+#centerCcolumn {
+	clear:			both;
+}
+#centerCcolumn .blockTitle {
+	padding:		5px 5px 5px 15px;
+	margin:			0;
+	font-size:		130%;
+	border-top:		1px solid #777;
+	border-bottom:		1px solid #777;
+	background-color:	#ddd
+}
+#centerCcolumn .blockContent {
+	margin-top:		5px;
+	margin-bottom:		10px;
+}
+/*-----------------------------------------------
+[ 中央-左・右各ブロックラッパー ]
+-----------------------------------------------*/
+#cl_cr_wrap {
+	clear:			both;
+}
+/*-----------------------------------------------
+[ 中央-左ブロック定義 ]
+-----------------------------------------------*/
+#centerLcolumn {
+	float:			left;
+	width:			49%;
+}
+#centerLcolumn .blockTitle {
+	padding:		5px 5px 5px 15px;
+	margin:			0;
+	font-size:		130%;
+	border-top:		1px solid #777;
+	border-bottom:		1px solid #777;
+	background-color:	#ddd
+}
+#centerLcolumn .blockContent {
+	margin-top:		5px;
+	margin-bottom:		5px;
+}
+/*-----------------------------------------------
+[ 中央-右ブロック定義 ]
+-----------------------------------------------*/
+#centerRcolumn {
+	float:			right;
+	width:			49%;
+}
+#centerRcolumn .blockTitle {
+	padding:		5px 5px 5px 15px;
+	margin:			0;
+	font-size:		130%;
+	border-top:		1px solid #777;
+	border-bottom:		1px solid #777;
+	background-color:	#ddd
+}
+#centerRcolumn .blockContent {
+	margin-top:		5px;
+	margin-bottom:		5px;
+}
+/*-----------------------------------------------
+[ 左ブロック・中央ブロックラッパー ]
+-----------------------------------------------*/
+#left_center_wrap {
+	float:			left;
+	width:			79%;
+}
+#left_center_wrap_rc_none {
+	width:			100%;
+}
+
+/*-----------------------------------------------
+[ 左ブロック定義 ]
+-----------------------------------------------*/
+#leftcolumn {
+	float:			left;
+	overflow:		auto;
+	width:			25%;
+	border-bottom:		1px solid #777;
+	border-right:		1px solid #777;
+}
+#leftcolumn_rc_none {
+	float:			left;
+	overflow:		auto;
+	width:			20%;
+	border-bottom:		1px solid #777;
+	border-right:		1px solid #777;
+}
+
+/*-----------------------------------------------
+[ 左ブロックタイトルの定義 ] #leftcolumn
+-----------------------------------------------*/
+#leftcolumn .blockTitle {
+	padding:		5px 5px 5px 15px;
+	color:			#000;
+	font-size:		130%;
+	border-top:		1px solid #777;
+	background-color:	#ddd;
+}
+#leftcolumn_rc_none .blockTitle {
+	padding:		5px 5px 5px 15px;
+	color:			#000;
+	font-size:		130%;
+	border-top:		1px solid #777;
+	background-color:	#ddd;
+}
+/*-----------------------------------------------
+[ 左ブロックコンテンツ定義 ] #leftcolumn
+-----------------------------------------------*/
+#leftcolumn .blockContent {
+	padding:		5px;
+	border-top:		1px solid #777;
+}
+/*-----------------------------------------------
+[ メインメニュー定義 ] #leftcolumn
+-----------------------------------------------*/
+#mainmenu a {
+	display:		block;
+	margin:			0;
+	padding:		4px;
+	border:			1px solid #fff;
+}
+#mainmenu a:hover {
+	border:			1px solid #777;
+}
+#mainmenu a.menuTop {
+	padding-left:		20px;
+}
+#mainmenu a.menuMain {
+	padding-left:		20px;
+}
+#mainmenu a.menuSub {
+	padding-left:		25px;
+}
+#mainmenu a:hover.menuSub {
+}
+
+/*-----------------------------------------------
+[ ユーザメニュー定義 ] #leftcolumn
+-----------------------------------------------*/
+#usermenu a {
+	display:		block;
+	margin:			0;
+	padding:		4px;
+	border:			1px solid #fff;
+}
+#usermenu a:hover {
+	border:			1px solid #777;
+}
+#usermenu a.menuTop {
+}
+#usermenu a.highlight {
+}
+/*-----------------------------------------------
+[ 右ブロック定義 ]
+-----------------------------------------------*/
+#rightcolumn {
+	float:			right;
+	overflow:		auto;
+	width:			20%;
+	border-bottom:		1px solid #777;
+	border-left:		1px solid #777;
+}
+/*-----------------------------------------------
+[ 右ブロックタイトル定義 ] #rightcolumn
+-----------------------------------------------*/
+#rightcolumn .blockTitle {
+	padding:		5px 5px 5px 15px;
+	margin:			0;
+	vertical-align:		middle;
+	font-size:		130%;
+ 	border-top:		1px solid #777;
+	background-color:	#ddd;
+}
+/*-----------------------------------------------
+[ 右ブロックコンテンツ定義 ] #rightcolumn
+-----------------------------------------------*/
+#rightcolumn .blockContent {
+	margin:			0;
+	padding:		5px;
+ 	border-top:		1px solid #777;
+}
+/*-----------------------------------------------
+フォーラム定義：外枠
+-----------------------------------------------*/
+.outer {
+}
+/*-----------------------------------------------
+フォーラム定義：投稿情報欄
+-----------------------------------------------*/
+.head {
+	padding:		5px;
+	background:		#ccc;
+	border-top:		1px solid #ddd;
+	border-left:		1px solid #ddd;
+	border-bottom:		1px solid #aaa;
+	border-right:		1px solid #aaa;
+}
+/*-----------------------------------------------
+フォーラム定義：交互色定義
+-----------------------------------------------*/
+.even {
+	padding:		5px;
+	background:		#ddd;
+	border-top:		1px solid #eee;
+	border-left:		1px solid #eee;
+	border-bottom:		1px solid #bbb;
+	border-right:		1px solid #bbb;
+}
+.odd {
+	padding:		5px;
+	background:		#eee;
+	border-top:		1px solid #f5f5f5;
+	border-left:		1px solid #f5f5f5;
+	border-bottom:		1px solid #ccc;
+	border-right:		1px solid #ccc;
+}
+tr.even td {
+	padding:		5px;
+	background:		#ddd;
+	border-top:		1px solid #eee;
+	border-left:		1px solid #eee;
+	border-bottom:		1px solid #bbb;
+	border-right:		1px solid #bbb;
+}
+tr.odd td {
+	padding:		5px;
+	background:		#eee;
+	border-top:		1px solid #f5f5f5;
+	border-left:		1px solid #f5f5f5;
+	border-bottom:		1px solid #ccc;
+	border-right:		1px solid #ccc;
+}
+/*-----------------------------------------------
+フォーラム定義：フッター
+-----------------------------------------------*/
+.foot {
+	padding:		5px;
+	background:		#bbb;
+	border-top:		1px solid #ccc;
+	border-left:		1px solid #ccc;
+	border-bottom:		1px solid #999;
+	border-right:		1px solid #999;
+}
+/*-----------------------------------------------
+最新ニュース定義：外枠
+-----------------------------------------------*/
+.item {
+}
+/*-----------------------------------------------
+最新ニュース定義：タイトルバー
+-----------------------------------------------*/
+.itemHead {
+	padding:		6px 3px 3px 10px;
+ 	color:			#111;
+	border-bottom:		1px solid #777;
+	background-color:	#ddd;
+}
+/*-----------------------------------------------
+最新ニュース定義：投稿情報欄
+-----------------------------------------------*/
+.itemInfo {
+	padding:		3px;
+	text-align:		right;
+	background-color:	#fff;
+}
+/*-----------------------------------------------
+最新ニュース定義：タイトル設定
+-----------------------------------------------*/
+.itemTitle a {
+	font-size:		130%;
+	color:			#111;
+}
+.itemTitle a:hover {
+	color:			#111;
+	text-decoration:	underline;
+}
+/*-----------------------------------------------
+最新ニュース定義：投稿者
+-----------------------------------------------*/
+.itemPoster {
+	font-size:		100%;
+}
+/*-----------------------------------------------
+最新ニュース定義：投稿日
+-----------------------------------------------*/
+.itemPostDate {
+	font-size:		100%;
+}
+/*-----------------------------------------------
+最新ニュース定義：ステータス
+-----------------------------------------------*/
+.itemStats {
+	font-size:		100%;
+}
+/*-----------------------------------------------
+最新ニュース定義：コンテンツ部分
+-----------------------------------------------*/
+.itemBody {
+	clear:			both;
+	overflow:		hidden;
+	padding:		5px;
+	border-top:		1px solid #aaa;
+	background-color:	#fafafa;
+}
+.itemText {
+	padding:		0;
+	line-height:		150%;
+}
+.itemText:first-letter {
+	font-size:		150%;
+	font-weight:		bold;
+}
+/*-----------------------------------------------
+最新ニュース定義：フッター
+-----------------------------------------------*/
+.itemFoot {
+	padding:		3px 3px 5px 5px;
+	text-align:		right;
+	border-bottom:		1px solid #aaa;
+	background-color:	#fafafa;
+}
+.itemAdminLink {
+	font-size:		100%;
+}
+.itemPermaLink {
+	font-size:		100%;
+}
+/*-----------------------------------------------
+システムメッセージ：エラー、コンファーム、リザルト
+-----------------------------------------------*/
+div.errorMsg {
+	padding:		10px;
+	font-weight:		bold;
+	text-align:		center;
+	background-color:	#ffcccc;
+	border-top:		1px solid #ddddff;
+	border-left:		1px solid #ddddff;
+	border-right:		1px solid #aaaaaa;
+	border-bottom:		1px solid #aaaaaa;
+}
+div.confirmMsg {
+	padding:		10px;
+	font-weight:		bold;
+	text-align:		center;
+	color:			#136c99;
+	background-color:	#f6f6f6;
+	border-top:		1px solid #ddddff;
+	border-left:		1px solid #ddddff;
+	border-right:		1px solid #aaaaaa;
+	border-bottom:		1px solid #aaaaaa;
+}
+div.resultMsg {
+	padding:		10px;
+	font-weight:		bold;
+	text-align:		center;
+	color:			#777;
+	background-color:	#f6f6f6;
+	border-top:		1px solid silver;
+	border-left:		1px solid silver;
+	border-right:		1px solid #666666;
+	border-bottom:		1px solid #666666;
+}
+/*-----------------------------------------------
+Xoopsコード記述定義
+-----------------------------------------------*/
+div.xoopsCode {
+	height:			250px;
+	width:			300px;
+	overflow:		auto;
+	padding:		3px;
+	background-color:	#fff;
+	border:			1px solid #aaa;
+}
+/*-----------------------------------------------
+引用部分定義
+-----------------------------------------------*/
+div.xoopsQuote {
+	height:			250px;
+	width:			300px;
+	overflow:		auto;
+	padding:		3px;
+	background-color:	#fff;
+	border:			1px solid #aaa;
+}
+.comTitle {
+	margin-bottom:		2px;
+}
+.comText {
+	padding:		2px;
+}
+.comUserStat {
+	margin:			2px;
+	padding:		2px;
+	font-size:		90%;
+	color:			#777;
+	border:			1px solid #fff;
+	background-color:	#eee;
+}
+.comUserStatCaption {
+	font-weight:		normal;
+}
+.comUserStatus {
+	margin-left:		2px;
+	margin-top:		10px;
+	font-size:		100%;
+	color:			#060;
+}
+.comUserRank {
+	margin:			2px;
+}
+.comUserRankText {
+	font-size:		100%;
+}
+.comUserRankImg {
+	border:			0;
+}
+.comUserName {
+}
+.comUserImg {
+	margin:			2px;
+}
+.comDate {
+	font-size:		100%;
+}
+.comDateCaption {
+}
